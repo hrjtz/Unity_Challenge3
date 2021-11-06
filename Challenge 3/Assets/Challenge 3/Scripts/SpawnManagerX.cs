@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
 {
+    // Variables
     public GameObject[] objectPrefabs;
     private float spawnDelay = 2;
     private float spawnInterval = 1.5f;
@@ -13,7 +14,9 @@ public class SpawnManagerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Starts and repeats item spawning
         InvokeRepeating("SpawnObjects", spawnDelay, spawnInterval);
+        // Gets variables from PlayerController Script
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
     }
 
